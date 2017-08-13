@@ -129,6 +129,4 @@ def generate_collage(img_h, img_w, collage_h=-1, collage_w=-1, img_dir="imgs", c
     """
     cv2.imwrite(collage_dir, collage)
 
-    
-
 generate_collage(150, 150)
