@@ -50,7 +50,7 @@ generate_collage(150, 150)
 
 I've provided a bunch of cute pictures of pokemon in the imgs/ directory, and the generate_collage.py file is prepared to run a demo. You can see the result of the demo below, and can do it yourself by running `python generate_collage.py` in a command prompt / terminal. As a sidenote, this is also what happens when you run the example call from the description.
 
-![Collage Demo](https://github.com/DarkElement75/collage-maker/collage.png)
+![Collage Demo](/collage.png)
 
 # Final Note
 
