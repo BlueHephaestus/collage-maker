@@ -87,7 +87,7 @@ def generate_collage(img_h, img_w, collage_h=-1, collage_w=-1, img_dir="imgs", c
     """
     Now create our image (assumes RGB)
     """
-    collage = np.ones((collage_h*img_h, collage_w*img_w, 3), dtype=np.uint8)*255
+    collage = np.zeros((collage_h*img_h, collage_w*img_w, 3), dtype=np.uint8)
 
     """
     Now we loop through all images in our img_dir,
