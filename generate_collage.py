@@ -18,6 +18,7 @@ import os,sys
 
 import numpy as np
 import cv2
+from PIL import Image
 
 def disp_img_fullscreen(img, name="test"):
     """
@@ -86,25 +87,45 @@ def generate_collage(img_h, img_w, collage_h=-1, collage_w=-1, img_dir="imgs", c
     """
     Now create our image (assumes RGB)
     """
-    collage = np.zeros((collage_h*img_h, collage_w*img_w, 3), dtype=np.uint8)
+    collage = np.ones((collage_h*img_h, collage_w*img_w, 3), dtype=np.uint8)*255
 
     """
     Now we loop through all images in our img_dir,
         resize them to our img_h, img_w,
         and insert them into our collage in the order left-right, top-bottom.
     """
-    for i, img_path in enumerate(recursive_get_paths(img_dir)):
+    i = 0
+    for img_path in recursive_get_paths(img_dir):
         #Print % progress
         sys.stdout.write("\r{:.2%} Complete".format(float(i)/(img_n-1)))
         sys.stdout.flush()
 
-        #Read image
-        img = cv2.imread(img_path)
+        #Before reading image, check if it's a gif so we can handle that special case
+        if img_path[-4:] == ".gif":
+            #Open the image with PIL since it can open gifs
+            img = Image.open(img_path)
+
+            #Get the first frame 
+            img.seek(0)
+
+            #Ensure we don't lose our color when converting to np array
+            img = img.convert("RGB")
+
+            #Get it as a np array
+            img = np.array(img)
+
+            #Then convert to BGR since that's what OpenCV uses
+            img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+
+        else:
+            #Read image normally
+            img = cv2.imread(img_path)
 
         #Check to make sure we have an image, if not continue to the next path
         try:
             img.size
         except:
+            print "\nProblem with %s, skipping" % img_path
             continue
 
         #Resize
@@ -124,6 +145,9 @@ def generate_collage(img_h, img_w, collage_h=-1, collage_w=-1, img_dir="imgs", c
 
         #Insert into our collage
         collage[row_i:row_i+img_h,col_i:col_i+img_w] = img
+
+        #Increment counter
+        i+=1
     """
     Now that we're finished, save our collage.
     """
