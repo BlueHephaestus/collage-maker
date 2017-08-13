@@ -1,4 +1,4 @@
-#Description
+# Description
 
 As the description above states, this is a small (relatively) python script I made to easily create customisable collages of images. This means that the individual images will all be the same height and width (for now) - though they can be rectangles - and put side by side into a massive new image.
 
@@ -40,19 +40,19 @@ generate_collage(150, 150)
 ```
 
 
-#Installation
+# Installation
 
 1. Download this repository
 
 2. You can run the demo by doing `python generate_collage.py`, or you can open the generate_collage.py file and read the description of the generate_collage() function for further documentation on using this program/script. The explanation in the function there should be plenty to get started on making collages using my script. Just in case it isn't or you are lazy, I have included the documentation above this section of the README, in the Description section.
 
-#Demo
+# Demo
 
 I've provided a bunch of cute pictures of pokemon in the imgs/ directory, and the generate_collage.py file is prepared to run a demo. You can see the result of the demo below, and can do it yourself by running `python generate_collage.py` in a command prompt / terminal. As a sidenote, this is also what happens when you run the example call from the description.
 
 ![Collage Demo](https://github.com/DarkElement75/collage-maker/collage.png)
 
-#Final Note
+# Final Note
 
 You can, as always, email me any questions you have. Good luck, have fun!
 
