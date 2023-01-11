@@ -125,11 +125,11 @@ def generate_collage(img_h, img_w, collage_h=-1, collage_w=-1, img_dir="imgs", c
         try:
             img.size
         except:
-            print "\nProblem with %s, skipping" % img_path
+            print("\nProblem with %s, skipping" % img_path)
             continue
 
         #Resize
-        img = cv2.resize(img, (img_h, img_w))
+        img = cv2.resize(img, (img_w, img_h))
 
         #Get character row and column index via our handy equations
         row_i = i // collage_w
@@ -153,4 +153,8 @@ def generate_collage(img_h, img_w, collage_h=-1, collage_w=-1, img_dir="imgs", c
     """
     cv2.imwrite(collage_dir, collage)
 
-generate_collage(150, 150)
+#generate_collage(150, 150, collage_h=11, collage_w=19)
+#generate_collage(300, 300, collage_h=13, collage_w=17, img_dir="../malaria/train/under_8", collage_dir="../malaria/train/under_8.png")
+#generate_collage(300, 300, collage_h=13, collage_w=17, img_dir="../malaria/train/over_12", collage_dir="../malaria/train/over_12.png")
+generate_collage(480, 640, collage_h=5, collage_w=5, img_dir="../UPHL/Controls_Calibration_Tests/graphs", collage_dir="../UPHL/Controls_Calibration_Tests/combined_graphs.png")
+
