@@ -12,6 +12,11 @@ I may also add more stuff to this if I wanna try it out, like:
 Further documentation found in each function.
 
 -Blake Edwards / Dark Element
+
+Modified and improved by 
+
+-Blue Hephaestus
+
 """
 
 import os,sys
@@ -44,9 +49,10 @@ def recursive_get_paths(directory):
     for (path, dirs, fnames) in os.walk(directory):
         for fname in fnames:
             paths.append(os.path.join(path, fname))
-    return paths
+    return sorted(paths)
 
 def generate_collage(img_h, img_w, collage_h=-1, collage_w=-1, img_dir="imgs", collage_dir="collage.png"):
+    collage_dir = img_dir + ".png"
     """
     Arguments:
         img_h, img_w: Size to scale all individual images to in our img_dir, when making our collage.
@@ -156,5 +162,73 @@ def generate_collage(img_h, img_w, collage_h=-1, collage_w=-1, img_dir="imgs", c
 #generate_collage(150, 150, collage_h=11, collage_w=19)
 #generate_collage(300, 300, collage_h=13, collage_w=17, img_dir="../malaria/train/under_8", collage_dir="../malaria/train/under_8.png")
 #generate_collage(300, 300, collage_h=13, collage_w=17, img_dir="../malaria/train/over_12", collage_dir="../malaria/train/over_12.png")
-generate_collage(480, 640, collage_h=5, collage_w=5, img_dir="../UPHL/Controls_Calibration_Tests/graphs", collage_dir="../UPHL/Controls_Calibration_Tests/combined_graphs.png")
+#generate_collage(960, 1280, collage_h=5, collage_w=5, img_dir="../UPHL/Controls_Calibration_Tests/graphs", collage_dir="../UPHL/Controls_Calibration_Tests/combined_graphs.png")
+#generate_collage(960, 1280, collage_h=5, collage_w=6, img_dir="../ML_Analyte_Analysis/graphs", collage_dir="../UPHL/Controls_Calibration_Tests/combined_graphs.png")
+#generate_collage(1152, 2304, collage_h=5, collage_w=6, img_dir="../ML_Analyte_Analysis/Blue/graphs", collage_dir="../ML_Analyte_Analysis/Blue/combined_graphs.png")
+#generate_collage(2000, 2200, collage_h=5, collage_w=6, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/boxplot_scoring_graphs/NewYork", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/boxplots_ny.png")
+#generate_collage(2000, 2200, collage_h=5, collage_w=6, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/boxplot_scoring_graphs/Texas", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/boxplots_tx.png")
+#generate_collage(2000, 2200, collage_h=5, collage_w=6, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/boxplot_scoring_graphs/Utah", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/boxplots_ut.png")
 
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/unified_inverted_labs/1", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/unified_inverted_labs/1.png")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/unified_inverted_labs/2", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/unified_inverted_labs/2.png")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/unified_inverted_labs/3", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/unified_inverted_labs/3.png")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/unified_inverted_labs/4", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/unified_inverted_labs/4.png")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/unified_inverted_labs/5", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/unified_inverted_labs/5.png")
+
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/unified_labs/1", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/unified_labs/1.png")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/unified_labs/2", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/unified_labs/2.png")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/unified_labs/3", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/unified_labs/3.png")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/unified_labs/4", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/unified_labs/4.png")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/unified_labs/5", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/unified_labs/5.png")
+
+#generate_collage(600, 1000, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/independent_labs/1", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/independent_labs/1.png")
+#generate_collage(600, 1000, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/independent_labs/2", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/independent_labs/2.png")
+#generate_collage(600, 1000, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/independent_labs/3", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/independent_labs/3.png")
+#generate_collage(600, 1000, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/independent_labs/4", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/independent_labs/4.png")
+#generate_collage(600, 1000, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/independent_labs/5", collage_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly/independent_labs/5.png")
+
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/minmax/unified_labs/1")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/minmax/unified_labs/2")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/minmax/unified_labs/3")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/minmax/unified_labs/4")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/minmax/unified_labs/5")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/minmax/unified_inverted_labs/1")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/minmax/unified_inverted_labs/2")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/minmax/unified_inverted_labs/3")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/minmax/unified_inverted_labs/4")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/minmax/unified_inverted_labs/5")
+
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/multofmedian/unified_labs/1")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/multofmedian/unified_labs/2")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/multofmedian/unified_labs/3")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/multofmedian/unified_labs/4")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/multofmedian/unified_labs/5")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/multofmedian/unified_inverted_labs/1")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/multofmedian/unified_inverted_labs/2")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/multofmedian/unified_inverted_labs/3")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/multofmedian/unified_inverted_labs/4")
+#generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly2/multofmedian/unified_inverted_labs/5")
+
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/all/1")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/all/2")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/all/3")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/all/4")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/all/5")
+
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/minmax/1")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/minmax/2")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/minmax/3")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/minmax/4")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/minmax/5")
+
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/mult_of_median/1")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/mult_of_median/2")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/mult_of_median/3")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/mult_of_median/4")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/mult_of_median/5")
+
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/zscores/1")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/zscores/2")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/zscores/3")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/zscores/4")
+generate_collage(600, 800, collage_h=3, collage_w=7, img_dir="/home/blue/Projects/UPHL/Harmonization_Tests/Iteration 9 -_ NY TX UT Data/plotly_sopd/zscores/5")
